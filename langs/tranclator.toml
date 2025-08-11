@@ -1,0 +1,75 @@
+[global]
+default-language = "New English v1.2"
+copy-to-clipboard = true
+quit-keywords = ["quit", "q", "bye"]
+
+[[language]]
+name = "New English v1.0"
+lower-mode = "preserve"
+
+[language.dict]
+"you're" = "ur"
+"youre" = "ur"
+"your" = "ur"
+"you" = "u"
+"f" = "bh"
+"q" = "c"
+"w" = "uu"
+"y" = "ee"
+"i" = "e"
+"p" = "b"
+"s" = "c"
+"d" = "t"
+"j" = "g"
+"k" = "c"
+"z" = "c"
+"x" = "cc"
+"v" = "b"
+"m" = "nn"
+
+[[language]]
+name = "New English v1.1"
+lower-mode = "preserve"
+
+[language.dict]
+"you're" = "ur"
+"youre" = "ur"
+"your" = "ur"
+"you" = "u"
+"f" = "bh"
+"q" = "c"
+"w" = "uu"
+"y" = "ee"
+"i" = "e"
+"p" = "b"
+"s" = "c"
+"d" = "t"
+"j" = "g"
+"k" = "c"
+"z" = "c"
+"x" = "chc"
+"v" = "b"
+"m" = "nn"
+
+[[language]]
+name = "New English v1.2"
+lower-mode = "lower"
+
+[language.dict]
+"you're" = "ur"
+"youre" = "ur"
+"your" = "ur"
+"you" = "u"
+"m" = "nn"
+"x" = "chc"
+"f" = "ph"
+"w" = "uu"
+"y" = "ie"
+"q" = "c"
+"p" = "b"
+"s" = "c"
+"d" = "t"
+"j" = "g"
+"k" = "c"
+"z" = "c"
+"v" = "b"

@@ -1,0 +1,4 @@
+[[rule]]
+name = "tranclator"
+include = ["**/tranclator.toml"]
+schema.path = "./tranclator-schema.json"

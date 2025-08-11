@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "tranclator Configuration",
+  "description": "Configuration schema for the Tranclator translation tool",
+  "type": "object",
+  "properties": {
+    "global": {
+      "type": "object",
+      "description": "Global configuration settings",
+      "properties": {
+        "default-language": {
+          "type": "string",
+          "description": "Default language to use when none is specified"
+        },
+        "copy-to-clipboard": {
+          "type": "boolean",
+          "description": "Whether to automatically copy translated text to clipboard",
+          "default": true
+        },
+        "quit-keywords": {
+          "type": "array",
+          "description": "Keywords that will exit REPL mode",
+          "items": {
+            "type": "string"
+          },
+          "default": ["quit", "exit", "q"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "language": {
+      "type": "array",
+      "description": "List of available translation languages",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Unique identifier for this language"
+          },
+          "lower-mode": {
+            "type": "string",
+            "enum": ["lower", "preserve", "upper"],
+            "description": "How to handle capitalization in translations",
+            "default": "preserve"
+          },
+          "dict": {
+            "type": "object",
+            "description": "Dictionary mapping source text to translated text",
+            "patternProperties": {
+              ".*": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["name", "lower-mode", "dict"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "global": {
+        "default-language": "pirate",
+        "copy-to-clipboard": true,
+        "quit-keywords": ["quit", "exit", "bye", "q"]
+      },
+      "language": [
+        {
+          "name": "pirate",
+          "lower-mode": "preserve",
+          "dict": {
+            "hello": "ahoy",
+            "yes": "aye",
+            "friend": "matey",
+            "money": "doubloons",
+            "ship": "vessel"
+          }
+        },
+        {
+          "name": "formal",
+          "lower-mode": "preserve",
+          "dict": {
+            "hi": "greetings",
+            "ok": "very well",
+            "cool": "excellent",
+            "bad": "suboptimal",
+            "good": "satisfactory"
+          }
+        },
+        {
+          "name": "leetspeak",
+          "lower-mode": "lower",
+          "dict": {
+            "elite": "1337",
+            "leet": "1337",
+            "hacker": "h4x0r",
+            "you": "u",
+            "are": "r",
+            "the": "teh",
+            "owned": "pwned"
+          }
+        }
+      ]
+    }
+  ]
+}
